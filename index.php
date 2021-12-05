@@ -49,12 +49,19 @@ input, select {
 </style>
 <script src="jquery.js"></script>
 <script src="base.js"></script>
+<script>
+window.onload = function() {
+    document.getElementById('enterSeq').focus();
+}
+</script>
 </head>
 <body>
 <div class='top'>
 <p align="center">
 <?php if ($_REQUEST['seq'] == 'yes') { ?>
-<input id="enterSeq" type="text" style="width:72%;" placeholder="List the GET command sequences" value="">
+<input id="enterSeq" type="text" style="width:72%;" placeholder="List the GET command sequences" value="" onkeydown="if (event.keyCode == 13) {
+    seq(enterSeq.value);
+}">
 <input type="button" class="actionButtonGreen" onclick="seq(enterSeq.value);" value="GET">
 <input type="button" class="actionButtonRed" onclick="window.location.href='index.php';" value="!">
 <?php } else { ?>
