@@ -1,2 +1,2 @@
 # HSIS
-A basic, minimal web platform for performing daily tasks. Includes GET package manager web form to install apps and content from any Git repository and manage installed packages.
+HSIS, an abbreviation form of Hierarchical Structure Instance System, an entire web-based system with built-in GitHub package manager. This version includes a new Git-based package manager form to install, replace and remove packages, each package is a Git repository, as well as some improvements, bug fixes and application menu on the index page.
