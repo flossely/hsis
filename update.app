@@ -1,1 +1,1 @@
-System Update=||=sys.upd.png=||=get('i', 'from', 'hsis', 'webfloss');
+System Update=||=sys.upd.png=||=get('i', 'from', 'hsis', 'flossely');
