@@ -62,8 +62,8 @@ window.onload = function() {
 <input id="enterSeq" type="text" style="width:72%;" placeholder="List the GET command sequences" value="" onkeydown="if (event.keyCode == 13) {
     seq(enterSeq.value);
 }">
-<input type="button" class="actionButtonGreen" onclick="seq(enterSeq.value);" value=">">
-<input type="button" class="actionButtonRed" onclick="window.location.href='index.php';" value="!">
+<input type="button" class="actionButton" onclick="seq(enterSeq.value);" value=">">
+<input type="button" class="actionButton" onclick="window.location.href='index.php';" value="!">
 <?php } else { ?>
 <select id="enterKey" onchange="
 var curSys = getButton.name;
@@ -88,8 +88,8 @@ if (keyVal == 'i') {
 <input type="text" id="enterPkg" style="width:20%;" placeholder="Package" value="from">
 <input type="text" id="enterRepo" style="width:20%;" placeholder="Repo" value="">
 <input type="text" id="enterUser" style="width:20%;" placeholder="User" value="">
-<input id='getButton' name="<?=file_get_contents('system.info');?>" type="button" class="actionButtonGreen" onclick="get(enterKey.options[enterKey.selectedIndex].value,enterPkg.value,enterRepo.value,enterUser.value);" value=">">
-<input type="button" class="actionButtonRed" onclick="window.location.href='index.php?seq=yes';" value="!">
+<input id='getButton' name="<?=file_get_contents('system.info');?>" type="button" class="actionButton" onclick="get(enterKey.options[enterKey.selectedIndex].value,enterPkg.value,enterRepo.value,enterUser.value);" value=">">
+<input type="button" class="actionButton" onclick="window.location.href='index.php?seq=yes';" value="!">
 <?php } ?>
 </p>
 </div>
