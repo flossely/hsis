@@ -44,7 +44,7 @@ input, select {
     background-color: #fff;
     color: #000;
     font-size: 16pt;
-    width: 27px;
+    width: 29px;
     position: relative;
 }
 </style>
