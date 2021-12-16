@@ -62,7 +62,7 @@ window.onload = function() {
 <input id="enterSeq" type="text" style="width:72%;" placeholder="List the GET command sequences" value="" onkeydown="if (event.keyCode == 13) {
     seq(enterSeq.value);
 }">
-<input type="button" class="actionButtonGreen" onclick="seq(enterSeq.value);" value="GET">
+<input type="button" class="actionButtonGreen" onclick="seq(enterSeq.value);" value=">">
 <input type="button" class="actionButtonRed" onclick="window.location.href='index.php';" value="!">
 <?php } else { ?>
 <select id="enterKey" onchange="
