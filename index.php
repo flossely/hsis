@@ -8,46 +8,7 @@ $list = str_replace($dir.'/','',(glob($dir.'/*.{app,pkg}', GLOB_BRACE)));
 <meta charset="UTF-8">
 <title>HSIS</title>
 <link rel="shortcut icon" href="favicon.png?rev=<?=time();?>" type="image/x-icon">
-<style>
-@font-face {
-    font-family: "libsans";
-    src: url("libsans.ttf");
-}
-body {
-    background-color: #dcdad5;
-    color: #000;
-    font-family: "libsans";
-    font-size: 14pt;
-}
-input, select {
-    background-color: #fff;
-    color: #000;
-    font-family: "libsans";
-    font-size: 14pt;
-}
-.top {
-    border: none;
-    position: absolute;
-    width: 98%;
-    height: 15%;
-    top: 0%;
-}
-.panel {
-    border: none;
-    position: absolute;
-    width: 96%;
-    height: 82%;
-    top: 15%;
-    overflow-y: scroll;
-}
-.actionButton {
-    background-color: #fff;
-    color: #000;
-    font-size: 16pt;
-    width: 29px;
-    position: relative;
-}
-</style>
+<link href="system.css?rev=<?=time();?>" rel="stylesheet">
 <script src="jquery.js"></script>
 <script src="base.js"></script>
 <script>
