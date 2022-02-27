@@ -9,8 +9,8 @@ $list = str_replace($dir.'/','',(glob($dir.'/*.{app,pkg}', GLOB_BRACE)));
 <title>HSIS</title>
 <link rel="shortcut icon" href="favicon.png?rev=<?=time();?>" type="image/x-icon">
 <link href="system.css?rev=<?=time();?>" rel="stylesheet">
-<script src="jquery.js"></script>
-<script src="base.js"></script>
+<script src="jquery.js?rev=<?=time();?>"></script>
+<script src="base.js?rev=<?=time();?>"></script>
 <script>
 window.onload = function() {
     document.getElementById('enterSeq').focus();
