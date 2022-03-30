@@ -70,7 +70,7 @@ foreach ($list as $key=>$value) {
         $packageID = basename($value, '.pkg');
         $fileTitle = 'Remove: '.$packageID;
         $fileIcon = 'sys.pkg.png';
-        $fileLink = "get('d', '".$packageID."', 'from', 'here', false);";
+        $fileLink = "get('d', '', '".$packageID."', 'from', '', 'here', false);";
     }
     
 ?>
