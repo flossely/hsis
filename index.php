@@ -21,8 +21,8 @@ window.onload = function() {
 <div class='top'>
 <p align="center">
 <?php if ($_REQUEST['seq'] == 'yes') { ?>
-<input id="enterSeq" type="text" style="width:72%;" placeholder="List the GET command sequences" value="" onkeydown="if (event.keyCode == 13) {
-    seq(enterSeq.value);
+<input id="enterSeq" type="text" style="width:72%;" placeholder="Execute JS command" value="" onkeydown="if (event.keyCode == 13) {
+    eval(enterSeq.value);
 }">
 <input type="button" class="actionButton" onclick="seq(enterSeq.value);" value=">">
 <input type="button" class="actionButton" onclick="window.location.href='index.php';" value="!">
@@ -50,7 +50,7 @@ if (keyVal == 'i') {
 <input type="text" id="enterPkg" style="width:20%;" placeholder="Package" value="from">
 <input type="text" id="enterRepo" style="width:20%;" placeholder="Repo" value="">
 <input type="text" id="enterUser" style="width:20%;" placeholder="User" value="">
-<input id='getButton' name="<?=file_get_contents('system.info');?>" type="button" class="actionButton" onclick="get(enterKey.options[enterKey.selectedIndex].value,'',enterPkg.value,enterRepo.value,'',enterUser.value);" value=">">
+<input id='getButton' name="<?=file_get_contents('system.info');?>" type="button" class="actionButton" onclick="get(enterKey.options[enterKey.selectedIndex].value,'',enterPkg.value,enterRepo.value,'',enterUser.value,false);" value=">">
 <input type="button" class="actionButton" onclick="window.location.href='index.php?seq=yes';" value="!">
 <?php } ?>
 </p>
@@ -70,7 +70,7 @@ foreach ($list as $key=>$value) {
         $packageID = basename($value, '.pkg');
         $fileTitle = 'Remove: '.$packageID;
         $fileIcon = 'sys.pkg.png';
-        $fileLink = "get('d', '".$packageID."', 'from', 'here');";
+        $fileLink = "get('d', '".$packageID."', 'from', 'here', false);";
     }
     
 ?>
