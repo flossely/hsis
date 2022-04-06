@@ -20,39 +20,7 @@ window.onload = function() {
 <body>
 <div class='top'>
 <p align="center">
-<?php if ($_REQUEST['seq'] == 'yes') { ?>
-<input id="enterSeq" type="text" style="width:72%;" placeholder="Execute JS command" value="" onkeydown="if (event.keyCode == 13) {
-    eval(enterSeq.value);
-}">
-<input type="button" class="actionButton" onclick="seq(enterSeq.value);" value=">">
-<input type="button" class="actionButton" onclick="window.location.href='index.php';" value="!">
-<?php } else { ?>
-<select id="enterKey" onchange="
-var curSys = getButton.name;
-var keyVal = enterKey.options[enterKey.selectedIndex].value;
-if (keyVal == 'i') {
-    enterPkg.value = 'from';
-    enterRepo.value = '';
-    enterUser.value = '';
-} else if (keyVal == 'r') {
-    enterPkg.value = curSys;
-    enterRepo.value = '';
-    enterUser.value = '';
-} else if (keyVal == 'd') {
-    enterPkg.value = '';
-    enterRepo.value = 'from';
-    enterUser.value = 'here';
-}">
-<option value='i'>Install</option>
-<option value='r'>Replace</option>
-<option value='d'>Remove</option>
-</select>
-<input type="text" id="enterPkg" style="width:20%;" placeholder="Package" value="from">
-<input type="text" id="enterRepo" style="width:20%;" placeholder="Repo" value="">
-<input type="text" id="enterUser" style="width:20%;" placeholder="User" value="">
-<input id='getButton' name="<?=file_get_contents('system.info');?>" type="button" class="actionButton" onclick="get(enterKey.options[enterKey.selectedIndex].value,'',enterPkg.value,enterRepo.value,'',enterUser.value,false);" value=">">
-<input type="button" class="actionButton" onclick="window.location.href='index.php?seq=yes';" value="!">
-<?php } ?>
+<?php include 'getman.php'; ?>
 </p>
 </div>
 <div class='panel'>
