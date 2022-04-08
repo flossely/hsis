@@ -1,6 +1,6 @@
 <?php
 $dir = '.';
-$list = str_replace($dir.'/','',(glob($dir.'/*.{app}')));
+$list = str_replace($dir.'/','',(glob($dir.'/*.app')));
 ?>
 <html>
 <head>
