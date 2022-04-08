@@ -1,6 +1,6 @@
 <?php
 $dir = '.';
-$list = str_replace($dir.'/','',(glob($dir.'/*.{app,pkg}', GLOB_BRACE)));
+$list = str_replace($dir.'/','',(glob($dir.'/*.{app}')));
 ?>
 <html>
 <head>
@@ -11,11 +11,6 @@ $list = str_replace($dir.'/','',(glob($dir.'/*.{app,pkg}', GLOB_BRACE)));
 <link href="system.css?rev=<?=time();?>" rel="stylesheet">
 <script src="jquery.js?rev=<?=time();?>"></script>
 <script src="base.js?rev=<?=time();?>"></script>
-<script>
-window.onload = function() {
-    document.getElementById('enterSeq').focus();
-}
-</script>
 </head>
 <body>
 <div class='top'>
@@ -27,20 +22,11 @@ window.onload = function() {
 <p align="center">
 <?php
 foreach ($list as $key=>$value) {
-    $fileExt = pathinfo($value, PATHINFO_EXTENSION);
-    if ($fileExt == 'app') {
-        $fileContent = file_get_contents($value);
-        $fileExp = explode('=||=', $fileContent);
-        $fileTitle = $fileExp[0];
-        $fileIcon = (file_exists($fileExp[1])) ? $fileExp[1] : 'sys.app.png';
-        $fileLink = $fileExp[2];
-    } elseif ($fileExt == 'pkg') {
-        $packageID = basename($value, '.pkg');
-        $fileTitle = 'Remove: '.$packageID;
-        $fileIcon = 'sys.pkg.png';
-        $fileLink = "get('d', '', '".$packageID."', 'from', '', 'here', false);";
-    }
-    
+    $fileContent = file_get_contents($value);
+    $fileExp = explode('|[1]|', $fileContent);
+    $fileTitle = $fileExp[0];
+    $fileIcon = (file_exists($fileExp[1])) ? $fileExp[1] : 'sys.app.png';
+    $fileLink = $fileExp[2];
 ?>
 <img class="actionIconButton" style="height:15%;position:relative;" title="<?=$fileTitle;?>" src="<?=$fileIcon;?>?rev=<?=time();?>" onclick="<?=$fileLink;?>">
 <?php } ?>
