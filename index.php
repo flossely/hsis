@@ -1,12 +1,22 @@
 <?php
 $dir = '.';
 $list = str_replace($dir.'/','',(glob($dir.'/*.app')));
+if (file_get_contents('name')) {
+    $projectTitleFile = file_get_contents('name');
+    if ($projectTitleFile != '') {
+        $projectTitle = $projectTitleFile;
+    } else {
+        $projectTitle = 'HSIS';
+    }
+} else {
+    $projectTitle = 'HSIS';
+}
 ?>
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta charset="UTF-8">
-<title>HSIS</title>
+<title><?=$projectTitle;?></title>
 <link rel="shortcut icon" href="favicon.png?rev=<?=time();?>" type="image/x-icon">
 <link href="system.css?rev=<?=time();?>" rel="stylesheet">
 <script src="jquery.js?rev=<?=time();?>"></script>
