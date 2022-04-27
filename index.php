@@ -40,7 +40,7 @@ foreach ($list as $key=>$value) {
 ?>
 <img class="actionIconButton" style="height:15%;position:relative;" title="<?=$fileTitle;?>" src="<?=$fileIcon;?>?rev=<?=time();?>" onclick="<?=$fileLink;?>">
 <?php } ?>
-<img class="actionIconButton" style="height:15%;position:relative;" title="Exit" src="sys.exit.png?rev=<?=time();?>" onclick="window.location.href = '../';">
+<img class="actionIconButton" style="height:15%;position:relative;" title="Exit" src="sys.exit.png?rev=<?=time();?>" onclick="get('r','','hsis','assembly','','flossely',false);">
 </p>
 </div>
 </body>
