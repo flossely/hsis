@@ -1,6 +1,5 @@
 <?php
 $dir = '.';
-$list = str_replace($dir.'/','',(glob($dir.'/*.app')));
 if (file_get_contents('name')) {
     $projectTitleFile = file_get_contents('name');
     if ($projectTitleFile != '') {
@@ -11,6 +10,7 @@ if (file_get_contents('name')) {
 } else {
     $projectTitle = 'HSIS';
 }
+$list = str_replace($dir.'/','',(glob($dir.'/*.app')));
 ?>
 <html>
 <head>
