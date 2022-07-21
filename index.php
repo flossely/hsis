@@ -1,22 +1,13 @@
 <?php
 $dir = '.';
-if (file_exists('name')) {
-    $projectTitleFile = file_get_contents('name');
-    if ($projectTitleFile != '') {
-        $projectTitle = $projectTitleFile;
-    } else {
-        $projectTitle = 'HSIS';
-    }
-} else {
-    $projectTitle = 'HSIS';
-}
+include 'system.php';
 $list = str_replace($dir.'/','',(glob($dir.'/*.app')));
 ?>
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta charset="UTF-8">
-<title><?=$projectTitle;?></title>
+<title><?=$websiteTitle;?></title>
 <link rel="shortcut icon" href="favicon.png?rev=<?=time();?>" type="image/x-icon">
 <link href="system.css?rev=<?=time();?>" rel="stylesheet">
 <?php include 'base.incl.php'; ?>
